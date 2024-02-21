@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize, Sequelize) => {
-    const Blog = sequelize.define("blog", {
+    const Portfolio = sequelize.define("portfolio", {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -11,27 +11,15 @@ module.exports = (sequelize, Sequelize) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        author: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
         content: {
             type: DataTypes.TEXT,
             allowNull: false
         },
-        slug: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        featuredImage: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        favorited: {
-            type: DataTypes.BOOLEAN,
+        tags: {
+            type: DataTypes.ARRAY(DataTypes.STRING),
             allowNull: false
         }
     });
   
-    return Blog;
+    return Portfolio;
 };

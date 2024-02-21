@@ -9,6 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 require("./src/routes/blogs.route.js")(app);
+require("./src/routes/portfolio.route.js")(app);
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 server.keepAliveTimeout = 120 * 1000;
